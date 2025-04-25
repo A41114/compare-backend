@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "jsdom": "^19.0.0",
     "mysql2": "^2.2.5",
+    "nodejs": "file:",
     "playwright": "^1.25.2",
     "puppeteer": "^11.0.0",
     "selenium-webdriver": "^4.30.0",

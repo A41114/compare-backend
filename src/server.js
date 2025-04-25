@@ -20,7 +20,8 @@ app.use(express.json());
 
 // app.use(function (req, res, next) {
 
-//     // Website you wish to allow to 
+
+
 //     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
 //     // Request methods you wish to allow
@@ -29,9 +30,14 @@ app.use(express.json());
 //     // Request headers you wish to allow
 //     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
+
 //     // Set to true if you need the website to include cookies in the requests sent
 //     // to the API (e.g. in case you use sessions)
 //     res.setHeader('Access-Control-Allow-Credentials', true);
+
+//     // Pass to next layer of middleware
+//     next();
+// });
 
 //     // Pass to next layer of middleware
 //     next();
@@ -49,6 +55,7 @@ initWebRoutes(app);
 
 connectDB();
 
+<<<<<<< HEAD
 
 //nếu chưa gán port ở file env thì gán bằng 1010
 // let port = process.env.PORT || 5000;
@@ -57,6 +64,8 @@ connectDB();
 //     //callback
 //     console.log("Backend Nodejs is running on the port : "+port )
 // })
+=======
+>>>>>>> backup-changes
 
 
 let PORT = process.env.PORT || 5000;
