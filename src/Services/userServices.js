@@ -85,7 +85,7 @@ async function fetchData(url) {
 let getAuctionAnnouncementService = (data)=>{
     return new Promise(async(resolve, reject)=>{
         try {
-            console.log('data: ',data)
+            console.log('data received: ',data)
             let res= await fetchData(data.url);
             resolve({
                 errCode:0,
