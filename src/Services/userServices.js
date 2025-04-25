@@ -9,10 +9,12 @@ const { chromium } = require('playwright');
 let htmlContent='';
 let links='';
 
+let fetchDataRun=false;
+
 async function fetchData(url) {
     if(url){
         try {
-                
+                fetchDataRun=true
                 // Khởi tạo trình duyệt
                 const browser = await chromium.launch({ headless: false }); // headless: false để thấy trình duyệt hoạt động
                 const context = await browser.newContext();
@@ -90,8 +92,9 @@ let getAuctionAnnouncementService = (data)=>{
             resolve({
                 errCode:0,
                 message:'getAuctionAnnouncementService succeeds !',
-                res,
-                data
+                res: res,
+                data,
+                fetchDataRun
             })
         } catch (e) {
             reject(e);
