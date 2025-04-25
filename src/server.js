@@ -55,17 +55,6 @@ initWebRoutes(app);
 
 connectDB();
 
-<<<<<<< HEAD
-
-//nếu chưa gán port ở file env thì gán bằng 1010
-// let port = process.env.PORT || 5000;
-
-// app.listen(port, ()=>{
-//     //callback
-//     console.log("Backend Nodejs is running on the port : "+port )
-// })
-=======
->>>>>>> backup-changes
 
 
 let PORT = process.env.PORT || 5000;
