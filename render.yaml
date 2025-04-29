@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: compare-backend
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
