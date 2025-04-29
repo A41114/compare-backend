@@ -5,21 +5,17 @@ FROM mcr.microsoft.com/playwright:v1.43.1-focal
 WORKDIR /app
 COPY . .
 
-# Cài đặt các package của ứng dụng (npm)
+# Cài đặt các package của ứng dụng
 RUN npm install
 
-# Kiểm tra và cài đặt dependencies hệ thống nếu cần thiết
-RUN apt-get update && apt-get install -y \
-  libx11-xcb1 \
-  libxcomposite1 \
-  libxdamage1 \
-  libxrandr2 \
-  xdg-utils \
-  --no-install-recommends \
-  && rm -rf /var/lib/apt/lists/*
+# Cài đặt trình duyệt và dependencies của Playwright (nếu chưa cài)
+RUN npx playwright install --with-deps
 
-# Mở port cho Render (Render sẽ dùng PORT env)
+# Kiểm tra xem Playwright đã được cài đặt chính xác chưa
+RUN npx playwright --version
+
+# Mở port cho Render
 EXPOSE 8080
 
-# Start app và sử dụng port từ biến môi trường PORT của Render
+# Start app
 CMD ["npm", "start"]

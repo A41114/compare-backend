@@ -1,7 +1,10 @@
 services:
   - type: web
-    name: compare-backend
+    name: your-service-name
+    env: node
+    buildCommand: "npm install && npx playwright install --with-deps"
+    startCommand: "npm start"
+    region: oregon
+    branch: main
     dockerfilePath: ./Dockerfile
-    envVars:
-      - key: NODE_ENV
-        value: production
+    port: 8080  # Đảm bảo port này tương thích với ứng dụng của bạn
