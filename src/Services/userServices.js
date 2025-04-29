@@ -14,7 +14,7 @@ let fetchDataRun=false;
 async function fetchData(url) {
     if(url){
         try {
-                fetchDataRun=true
+                
                 // Khởi tạo trình duyệt
                 const browser = await chromium.launch({ headless: false }); // headless: false để thấy trình duyệt hoạt động
                 const context = await browser.newContext();
@@ -23,6 +23,7 @@ async function fetchData(url) {
                 // Điều hướng đến trang đăng nhập
                 await page.goto('https://daugiavna.vn/taisankhac/login'); // Thay 'https://example.com/login' bằng URL trang đăng nhập thực tế
 
+                fetchDataRun=true
                 // Nhập thông tin đăng nhập
                 await page.fill('input[type="text"]', 'testvnadaugia@gmail.com'); // Thay 'input[name="username"]' với selector tương ứng
                 await page.fill('input[type="password"]', '12345678'); // Thay 'input[name="password"]' với selector tương ứng
