@@ -16,7 +16,7 @@ async function fetchData(url) {
         try {
                 
                 // Khởi tạo trình duyệt
-                const browser = await chromium.launch({ headless: false }); // headless: false để thấy trình duyệt hoạt động
+                const browser = await chromium.launch({ headless: true }); // headless: false để thấy trình duyệt hoạt động
                 const context = await browser.newContext();
                 const page = await context.newPage();
 
