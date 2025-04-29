@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/playwright:v1.43.1-jammy
 
 WORKDIR /app
-COPY . .
+COPY . . 
 
 # Cài đặt các package Node
 RUN npm install
@@ -17,6 +17,15 @@ RUN apt-get update && apt-get install -y \
     libsecret-1-0 \
     libmanette-0.2-0 \
     libgles2 \
+    libvulkan1 \
+    libnss3 \
+    libatk-bridge2.0-0 \
+    libatk1.0-0 \
+    libcups2 \
+    libxcomposite1 \
+    libxrandr2 \
+    libgbm1 \
+    libasound2 \
     --no-install-recommends && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
