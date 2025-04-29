@@ -16,25 +16,11 @@ let getAboutme = (req,res) =>{
     return res.render('test/about.ejs');
 }
 
-// let getAuctionAnnouncement = async(req,res) =>{
-//     try {
-//         console.log(req.body)
-//         let data = await userService.getAuctionAnnouncementService(req.body)
-//         // console.log('Controller run !!!',data)
-        
-//         return res.status(200).json(data);
-//     } catch (e) {
-//         console.log(e)
-//         return res.status(200).json({
-//             errCode: -1,
-//             errMessage: 'Error from server'
-//         })
-//     }
-// }
+
 
 let getAuctionAnnouncement=(async(req,res)=>{
     try {
-        // console.log(req.body)
+        console.log('controller: ',req.body)
         let data = await userService.getAuctionAnnouncementService(req.body)
         // console.log('Controller run !!!',data)
         
