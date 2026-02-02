@@ -29,6 +29,15 @@ let initWebRoutes = (app)=>{
     router.post('/api/messages/send', chatboxController.sendMessage)// gửi tin nhắn
 
     router.get('/api/getAllAdminChatbox-by-admin-id', chatboxController.getAllAdminChatboxByAdminId)// gửi tin nhắn
+
+    
+    //Bất động sản
+    router.post('/api/create-real-estate', homeController.handleCreateRealEstate)// tạo bđs
+    router.put('/api/setting-real-estate', homeController.handleSettingRealEstate)// tạo/sửa thông tin chính
+    router.put('/api/additional-information-real-estate', homeController.handleAdditionalInformationRealEstate)// tạo/sửa thông tin thêm
+    
+    // 
+
     //rest api : sử dụng get, post,...
     return app.use("/", router);
 }

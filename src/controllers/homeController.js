@@ -17,7 +17,7 @@ let getAboutme = (req,res) =>{
 }
 let getAuctionAnnouncement=(async(req,res)=>{
     try {
-        console.log('getAuctionAnnouncement body',req.body)
+        // console.log('getAuctionAnnouncement body',req.body)
         let data = await userService.getAuctionAnnouncementService(req.body)
         // console.log('req.header: ',req.header)
         // console.log('Controller run !!!',data)
@@ -51,25 +51,6 @@ let handleSendMail=(async(req,res)=>{
     }
 
 })
-
-
-
-let handleCreateNewRecruitment=(async(req,res)=>{
-    try {
-        console.log('check recruitment controller: ',req.body)
-        // let data = await employerService.CreateNewRecruitment(req.body)
-        return res.status(200).json(req.body);
-
-    } catch (e) {
-        console.log('Handle create new recruitment error: ', e)
-        return res.status(200).json({
-            errCode: -1,
-            errMessage: 'Error from server'
-        })
-    }
-
-})
-
 let handleSignUp=(async(req,res)=>{
     try {
         // console.log('check handleSignUp controller: ',req.body)
@@ -97,6 +78,30 @@ let handleLogin=(async(req,res)=>{
     }
 })
 
+let handleCreateRealEstate = (async(req,res)=>{
+    try {
+        let data = await userService.createRealEstate(req.body)
+        return res.status(200).json(data)
+    } catch (e) {
+        console.log('Handle handleCreateRealEstate error: ',e)
+    }
+})
+let handleSettingRealEstate = (async(req,res)=>{
+    try {
+        let data = await userService.settingRealEstate(req.body)
+        return res.status(200).json(data)
+    } catch (e) {
+        console.log('Handle handleSettingRealEstate error: ',e)
+    }
+})
+let handleAdditionalInformationRealEstate = (async(req,res)=>{
+    try {
+        let data = await userService.additionalInformationRealEstate(req.body)
+        return res.status(200).json(data)
+    } catch (e) {
+        console.log('Handle handleSettingRealEstate error: ',e)
+    }
+})
 
 
 
@@ -105,9 +110,11 @@ module.exports = {
     getHomePage: getHomePage,
     getAboutme : getAboutme,
     getAuctionAnnouncement : getAuctionAnnouncement,
-    handleCreateNewRecruitment : handleCreateNewRecruitment,
     handleSendMail : handleSendMail,
     handleSignUp : handleSignUp,
-    handleLogin : handleLogin
+    handleLogin : handleLogin,
+    handleCreateRealEstate : handleCreateRealEstate,
+    handleSettingRealEstate : handleSettingRealEstate,
+    handleAdditionalInformationRealEstate : handleAdditionalInformationRealEstate
     
 }

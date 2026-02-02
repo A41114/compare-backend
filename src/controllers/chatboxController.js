@@ -28,7 +28,7 @@ let getMessagesByChatboxId = async (req,res)=>{
 let sendMessage = async(req,res)=>{
     try {
         let data = await chatboxServices.sendMessageService(req.body)
-        console.log('sendMessage req.body: ',req.body)
+        // console.log('sendMessage req.body: ',req.body)
         return res.status(200).json(data); 
     } catch (e) {
         console.log(e)
